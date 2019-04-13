@@ -17,10 +17,18 @@ def include_with_api(def moduleName) {
     from originDir
     into targetDir
     //拷贝文件
+    exclude '**/test/'
+    exclude '**/androidTest/'
+    exclude '**/release/'
+    exclude '**/debug/'
+    exclude '**/build/'
+    exclude '**/res/'
     include '**/*.api'
     include '**/AndroidManifest.xml'
     include 'api.gradle'
   }
+  //删除空文件夹
+  deleteEmptyDir(new File(targetDir))
   //读取实现模块的manifest并将package的值后加 .api 作为API工程的manifest package
   FileTree manifests = fileTree(targetDir).include("**/AndroidManifest.xml")
   manifests.each { File file ->
@@ -41,4 +49,23 @@ def include_with_api(def moduleName) {
   }
   //加入 SDK工程
   include ":$sdkName"
+}
+private void deleteEmptyDir(File dir) {
+  if (dir.isDirectory()) {
+    File[] fs = dir.listFiles()
+    if (fs != null && fs.length > 0) {
+      for (int i = 0; i < fs.length; i++) {
+        File tmpFile = fs[i]
+        if (tmpFile.isDirectory()) {
+          deleteEmptyDir(tmpFile)
+        }
+        if (tmpFile.isDirectory() && tmpFile.listFiles().length <= 0) {
+          tmpFile.delete()
+        }
+      }
+    }
+    if (dir.isDirectory() && dir.listFiles().length == 0) {
+      dir.delete()
+    }
+  }
 }
