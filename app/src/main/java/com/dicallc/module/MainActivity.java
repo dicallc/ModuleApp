@@ -8,8 +8,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.dicallc.provider.aidl.UserInfoService;
 import com.dicallc.provider.router.RouterManager;
+import com.dicallc.usercenter.UserInfoService;
 
 public class MainActivity extends AppCompatActivity {
 

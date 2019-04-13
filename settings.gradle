@@ -1,5 +1,5 @@
-include ':app', ':baselibrary', ':usercenter', ':provider'
-include_with_api(':usercenter')
+include ':app', ':baselibrary', ':usercenter', ':provider', ':usercenter_api'
+//include_with_api(':usercenter')
 def include_with_api(def moduleName) {
   //获得工程根目录
   String originDir = project(moduleName).projectDir

@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import com.alibaba.android.arouter.BuildConfig;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.socks.library.KLog;
 
 /**
  * Created by dicallc on 2019/4/12.
@@ -49,7 +48,6 @@ public class RouterManager {
 
   public static void goHome(Context context) {
     String packageName = context.getApplicationInfo().packageName;
-    KLog.e(packageName);
     String suffix = packageName.substring(packageName.lastIndexOf(".") + 1);
     switch (suffix) {
       case MODULE_LOGIN:

@@ -2,10 +2,10 @@ package com.dicallc.usercenter.provider;
 
 import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.dicallc.provider.aidl.UserInfoService;
-import com.dicallc.provider.model.UserInfo;
 import com.dicallc.provider.router.RouterManager;
 import com.dicallc.usercenter.Manager.UserInfoManager;
+import com.dicallc.usercenter.UserInfo;
+import com.dicallc.usercenter.UserInfoService;
 
 /**
  * Created by dicallc on 2019/4/13.

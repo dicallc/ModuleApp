@@ -1,6 +1,6 @@
 package com.dicallc.usercenter.Manager;
 
-import com.dicallc.provider.model.UserInfo;
+import com.dicallc.usercenter.UserInfo;
 
 /**
  * Created by dicallc on 2019/4/13.

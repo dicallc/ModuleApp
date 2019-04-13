@@ -8,6 +8,11 @@ android {
     targetSdkVersion target_sdk_version
     versionCode 1
     versionName "1.0"
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+      }
+    }
   }
 
   sourceSets {
@@ -21,6 +26,6 @@ android {
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation project(':provider')
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  api project(':provider')
 }
